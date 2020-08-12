@@ -20,4 +20,9 @@ public class MockTodoListRepository {
         }
         todoList.add(todo);
     }
+    public static void removeByTask(String id){
+        if (todoList != null && !todoList.isEmpty()) {
+            todoList.removeIf(todo -> todo.getId().equalsIgnoreCase(id) ); //equalsIgnoreCase ไม่สนตัวเล็กตัวใหญ่
+        } //["1","2"] "1" -> "1" == "1"
+    }
 }

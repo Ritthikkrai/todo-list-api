@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 @Service
@@ -17,6 +18,16 @@ public class TodoListService {
     }
 
     public void addTodo(Todo todo) {
-        MockTodoListRepository.addTodoToList(todo);
+        MockTodoListRepository.addTodoToList(generateId(todo));
+    }
+
+    private  Todo generateId(Todo todo) {
+        String id = UUID.randomUUID().toString().replace("-", "");
+        todo.setId(id);
+        return todo;
+
+    }
+    public void removeBy(String id) {
+        MockTodoListRepository.removeByTask(id);
     }
 }

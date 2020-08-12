@@ -4,11 +4,9 @@ import com.tonyniceky.todolist.model.Todo;
 import com.tonyniceky.todolist.model.TodoListResponse;
 import com.tonyniceky.todolist.service.TodoListService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController()
 public class TodoListController {
@@ -27,6 +25,11 @@ public class TodoListController {
     public ResponseEntity create(@RequestBody Todo newTask) {
         TodoListService todoListService = new TodoListService();
         todoListService.addTodo(newTask);
+        return ResponseEntity.ok().build();
+    }
+    @GetMapping(value = "/api/todo-list/remove", params = "id")
+    public ResponseEntity removeTodo(@RequestParam String id) {
+        todoListService.removeBy(id);
         return ResponseEntity.ok().build();
     }
 }
