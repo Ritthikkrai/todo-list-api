@@ -11,10 +11,12 @@ import java.util.List;
 
 @Service
 public class TodoListService {
-    public List<Todo> getTodo() {
+    public List<Todo> getListOfTodo() {
 
         return MockTodoListRepository.getTodoList();
+    }
 
-
+    public void addTodo(Todo todo) {
+        MockTodoListRepository.addTodoToList(todo);
     }
 }
