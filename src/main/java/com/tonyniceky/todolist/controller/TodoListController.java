@@ -32,4 +32,9 @@ public class TodoListController {
         todoListService.removeBy(id);
         return ResponseEntity.ok().build();
     }
+    @GetMapping(value = "/api/todo-list/clear")
+    public ResponseEntity clearTodo() {
+        todoListService.clearAll();
+        return ResponseEntity.ok().build();
+    }
 }

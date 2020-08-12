@@ -30,4 +30,7 @@ public class TodoListService {
     public void removeBy(String id) {
         MockTodoListRepository.removeByTask(id);
     }
+    public void clearAll(){
+        MockTodoListRepository.clearAllTask();
+    }
 }
