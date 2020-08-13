@@ -1,6 +1,5 @@
 package com.tonyniceky.todolist.model;
 
-
 import java.util.List;
 
 public class TodoListResponse {

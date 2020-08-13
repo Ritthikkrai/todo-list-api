@@ -1,6 +1,6 @@
 package com.tonyniceky.todolist.repository;
-import com.tonyniceky.todolist.model.Todo;
 
+import com.tonyniceky.todolist.model.Todo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class MockTodoListRepository {
     public static void removeByTask(String id) {
         if (todoList != null && !todoList.isEmpty()) {
             todoList.removeIf(todo -> todo.getId().equalsIgnoreCase(id)); //equalsIgnoreCase ไม่สนตัวเล็กตัวใหญ่
-        } //["1","2"] "1" -> "1" == "1"
+        }
     }
 
     public static void clearAllTask() {

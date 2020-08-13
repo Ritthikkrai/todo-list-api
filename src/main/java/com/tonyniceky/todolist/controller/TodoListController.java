@@ -4,15 +4,14 @@ import com.tonyniceky.todolist.model.Todo;
 import com.tonyniceky.todolist.model.TodoListResponse;
 import com.tonyniceky.todolist.service.TodoListService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController()
 public class TodoListController {
+
     @Autowired
     private TodoListService todoListService;
-
 
     @GetMapping("/api/todo-list")
     public TodoListResponse getTodoList(){
